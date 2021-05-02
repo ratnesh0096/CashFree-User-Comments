@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Alex Bauba",
+        "isCommentable": false,
+        "comments": []
+    },
+    {
+        "id": 2,
+        "name": "Bob Catcher",
+        "isCommentable": false,
+        "comments": []
+    },
+    {
+        "id": 3,
+        "name": "Catherine Delta",
+        "isCommentable": false,
+        "comments": []
+    },
+    {
+        "id": 4,
+        "name": "David Eurin",
+        "isCommentable": false,
+        "comments": []
+    }
+]
