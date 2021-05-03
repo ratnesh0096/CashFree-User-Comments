@@ -13,7 +13,9 @@ function App() {
   const [currentUser, setCurrentUser] = useState('');
   // const [date, setDate] = useState('');
   const handleSelect = (e) => {
-    setCurrentUser(e.target.value);
+    const tempUserId = parseInt(e.target.value);
+    const tempUser = userList.find(user => tempUserId === user.id)
+    setCurrentUser(tempUser);
     setComment(true);
     // alert("hello");
   }
@@ -38,9 +40,12 @@ function App() {
     // setDate(todayDate);
     const copiedComments = [...comments];
     const singleComment = {
-      "name": currentUser,
+      "id": currentUser.id,
+      "name": currentUser.name,
       "comment": text,
       "date": todayDate,
+      "doReply": false,
+      "replies":[]
       // "replies": 
     }
 
@@ -49,6 +54,8 @@ function App() {
     setCommentObj(copiedComments);
     setComment(false);
     setText('');
+    console.log(currentUser);
+    console.log(comments);
   }
   return (
     <div className="App">
@@ -60,7 +67,7 @@ function App() {
         handleTextArea={handleTextArea}
         isCommentable={isCommentable}
         handleComment={handleComment} />}
-      <DisplayComments comments={comments} />
+      <DisplayComments comments={comments} setCommentObj={setCommentObj} />
     </div>
   );
 }

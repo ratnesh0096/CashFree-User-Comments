@@ -8,7 +8,7 @@ const SelectUser = ({ userList, handleSelect, setUserList }) => {
                 {
                     userList.map((user, key) =>
                         <option className="dropdown-content"
-                            value={user.name}
+                            value={user.id}
                             key={key}
                             id={user.id}
                         >{user.name}
